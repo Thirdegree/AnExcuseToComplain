@@ -23,11 +23,12 @@ def main():
 		match = re.match(pattern, comment.body)
 		if match:
 			comment.reply("/r/AnExcuseToComplain")
-			r.submit("/r/AnExcuseToComplain","/u/%s's Attempt at Easy Karma"%comment.author.name, url=comment.permalink)
+			r.submit("AnExcuseToComplain","/u/%s's Attempt at Easy Karma"%comment.author.name, url=comment.permalink)
 
 while True:
 	try:
 		main()
 	except Exception as e:
+		print e
 		if e == KeyboardInterrupt:
 			raise e
